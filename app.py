@@ -166,12 +166,11 @@ If a customer's request is outside these areas, politely say you can only help w
 # GROQ CLIENT
 # ---------------------------------------------------------
 def get_client():
-     api_key = os.environ.get("GROQ_API_KEY", "")
+    api_key = os.environ.get("GROQ_API_KEY", "")
     if not api_key:
-        st.error("⚠️ GROQ_API_KEY not found. Add it in Streamlit Cloud → Settings → Secrets.")
+        st.error("⚠️ GROQ_API_KEY not found. Add it in Render → Environment.")
         st.stop()
     return Groq(api_key=api_key)
-
 
 def run_agent(client, messages):
     """Send messages to Groq with tool access, execute tool calls, and return final reply."""
