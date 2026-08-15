@@ -166,7 +166,7 @@ If a customer's request is outside these areas, politely say you can only help w
 # GROQ CLIENT
 # ---------------------------------------------------------
 def get_client():
-    api_key = st.secrets.get("GROQ_API_KEY", os.environ.get("GROQ_API_KEY", ""))
+     api_key = os.environ.get("GROQ_API_KEY", "")
     if not api_key:
         st.error("⚠️ GROQ_API_KEY not found. Add it in Streamlit Cloud → Settings → Secrets.")
         st.stop()
